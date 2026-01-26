@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap");
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  font-family: "Nunito", sans-serif;
+  line-height: 1.5;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --radius: 1rem;
+  --neutral-25: #fdfdfd;
+  --neutral-50: #fafafa;
+  --neutral-100: #f5f5f5;
+  --neutral-200: #e9eaeb;
+  --neutral-300: #d5d7da;
+  --neutral-400: #a4a7ae;
+  --neutral-500: #717680;
+  --neutral-600: #535862;
+  --neutral-700: #414651;
+  --neutral-800: #252b37;
+  --neutral-900: #181d27;
+  --neutral-950: #0a0d12;
+
+  --primary: #c12116;
+  --accent-red: #d9206e;
+  --accent-green: #079455;
+  --accent-yellow: #fdb022;
+  --white: #ffffff;
+  --black: #000000;
+
+  --primary-50: #fff3ed;
+  --primary-100: #ffe7e4;
+  --danger-50: #fff5f5;
+  --danger-200: #f4d4d4;
+  --danger-700: #b42318;
+  
+  --background: var(--neutral-50);
+  --foreground: var(--neutral-900);
+  --card: var(--white);
+  --card-foreground: var(--neutral-900);
+  --popover: var(--white);
+  --popover-foreground: var(--neutral-900);
+  --primary-foreground: var(--white);
+  --secondary: var(--neutral-100);
+  --secondary-foreground: var(--neutral-800);
+  --muted: var(--neutral-100);
+  --muted-foreground: var(--neutral-500);
+  --accent: var(--neutral-100);
+  --accent-foreground: var(--neutral-800);
+  --destructive: var(--accent-red);
+  --border: var(--neutral-200);
+  --input: var(--neutral-200);
+  --ring: var(--neutral-300);
+  --chart-1: var(--primary);
+  --chart-2: var(--accent-green);
+  --chart-3: var(--accent-yellow);
+  --chart-4: var(--neutral-500);
+  --chart-5: var(--neutral-800);
+  --sidebar: var(--white);
+  --sidebar-foreground: var(--neutral-900);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--white);
+  --sidebar-accent: var(--neutral-100);
+  --sidebar-accent-foreground: var(--neutral-800);
+  --sidebar-border: var(--neutral-200);
+  --sidebar-ring: var(--neutral-300);
+}
+
+@layer utilities {
+  .font-regular   { font-weight: 400; }
+  .font-medium    { font-weight: 500; }
+  .font-semibold  { font-weight: 600; }
+  .font-bold      { font-weight: 700; }
+  .font-extrabold { font-weight: 800; }
+
+  .text-display-3xl { font-size: 3.75rem; line-height: 4.5rem; }
+  .text-display-2xl { font-size: 3rem; line-height: 3.75rem; letter-spacing: -0.02em; }
+  .text-display-xl  { font-size: 2.5rem; line-height: 3rem; letter-spacing: -0.02em; }
+  .text-display-lg  { font-size: 2.25rem; line-height: 2.75rem; letter-spacing: -0.02em; }
+  .text-display-md  { font-size: 2rem; line-height: 2.5rem; }
+  .text-display-sm  { font-size: 1.75rem; line-height: 2.375rem; }
+  .text-display-xs  { font-size: 1.5rem; line-height: 2.25rem; }
+
+  .text-xl { font-size: 1.25rem; line-height: 2.125rem; }
+  .text-lg { font-size: 1.125rem; line-height: 2rem; }
+  .text-md { font-size: 1rem; line-height: 1.875rem; }
+  .text-sm { font-size: 0.875rem; line-height: 1.75rem; }
+  .text-xs { font-size: 0.75rem; line-height: 1.5rem; }
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.logo-primary {
+  filter: brightness(0) saturate(100%) invert(17%) sepia(86%)
+    saturate(3921%) hue-rotate(351deg) brightness(83%) contrast(94%);
+}
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-neutral-25: var(--neutral-25);
+  --color-neutral-50: var(--neutral-50);
+  --color-neutral-100: var(--neutral-100);
+  --color-neutral-200: var(--neutral-200);
+  --color-neutral-300: var(--neutral-300);
+  --color-neutral-400: var(--neutral-400);
+  --color-neutral-500: var(--neutral-500);
+  --color-neutral-600: var(--neutral-600);
+  --color-neutral-700: var(--neutral-700);
+  --color-neutral-800: var(--neutral-800);
+  --color-neutral-900: var(--neutral-900);
+  --color-neutral-950: var(--neutral-950);
+  --color-primary-50: var(--primary-50);
+  --color-primary-100: var(--primary-100);
+  --color-accent-red: var(--accent-red);
+  --color-accent-green: var(--accent-green);
+  --color-accent-yellow: var(--accent-yellow);
+  --color-danger-50: var(--danger-50);
+  --color-danger-200: var(--danger-200);
+  --color-danger-700: var(--danger-700);
+  --color-white: var(--white);
+  --color-black: var(--black);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
